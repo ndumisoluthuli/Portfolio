@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ndumiso Luthuli — Portfolio</title>
+  <meta name="description" content="Portfolio website for Ndumiso Luthuli — Software Developer" />
+  <link rel="stylesheet" href="Portfolio_Style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="container nav">
+      <div class="logo"><span class="logo-dot"></span> Ndumiso Luthuli</div>
+      <nav class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="https://github.com/ndumisoluthuli" target="_blank" rel="noreferrer noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <div class="container hero">
+    <div>
+      <span class="badge">Open to opportunities • Software Developer</span>
+      <h1 class="headline">Building clean, testable backends and developer‑friendly APIs.</h1>
+      <img src="https://scontent-cpt1-1.xx.fbcdn.net/v/t39.30808-6/539385264_2260227781092704_8345701658494304228_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=3nJitKj2n7kQ7kNvwG1Rm4N&_nc_oc=AdnvFSJyLNNyYH0hU8fRxlkb0cN-wqQskyGZnQrRO08leiutAsAf86w8DPhLGfa1qpM&_nc_zt=23&_nc_ht=scontent-cpt1-1.xx&_nc_gid=P1419VwGtmXvHLi7nLRKMQ&oh=00_AfUz2NP_FFEbOVcCZGflOsf9CDYprTlWM31LQIh4h6umgw&oe=68BCC60D" style="width:100%;">
+      <p class="sub">I’m Ndumiso, a developer focused on Java, SQL, Web APIs and build pipelines. I care about maintainable code, good DX, and shipping continuously.</p>
+      <div class="stack-chips">
+        <span class="chip">Java</span>
+        <span class="chip">Spring Boot</span>
+        <span class="chip">RESTful APIs</span>
+        <span class="chip">PostgreSQL</span>
+        <span class="chip">JDBC / JPA</span>
+        <span class="chip">Docker</span>
+        <span class="chip">CI/CD</span>
+        <span class="chip">GitLab</span>
+      </div>
+      <div class="spacer"></div>
+      <div class="row">
+        <a class="btn" href="#contact">Get in touch</a>
+        <a href="#projects" class="muted">See projects ↓</a>
+      </div>
+    </div>
+
+    <div class="hero-card" aria-hidden="true">
+      <div class="thumb" style="margin-bottom:12px">API • DB • CI</div>
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="tag">OOP</div>
+          <h3>Separation of Concerns</h3>
+          <p>Layered architecture (Controller → Service → Repository) with DTOs, tests and clear boundaries.</p>
+        </div>
+        <div class="card">
+          <div class="tag">Databases</div>
+          <h3>SQL & RDBMS</h3>
+          <p>Joins, indexes, transactions, normalization; hands‑on with PostgreSQL & MySQL.</p>
+        </div>
+        <div class="card">
+          <div class="tag">Pipelines</div>
+          <h3>Build & Docker</h3>
+          <p>Maven, unit + acceptance tests, Docker images, and CI pipelines that fail fast.</p>
+        </div>
+        <div class="card">
+          <div class="tag">Web</div>
+          <h3>Web APIs</h3>
+          <p>RESTful design, status codes, idempotency, pagination, and secure auth over HTTPS.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Projects ===== -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="muted">A few things I’ve built recently. Code is available on GitHub.</p>
+
+      <div class="grid cols-3" style="margin-top:18px">
+        <article class="card">
+          <div class="thumb">Robot Worlds Server</div>
+          <h3>Socket‑based Robot World</h3>
+          <p>TCP server/client that manages a world grid and robot commands with a JSON protocol.</p>
+          <div class="row" style="margin-top:10px">
+            <span class="tag">Java</span><span class="tag">Sockets</span><span class="tag">JUnit</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">Task API</div>
+          <h3>Tasks Web API</h3>
+          <p>REST API with CRUD, pagination, and filtering; JDBC + JPA hybrid for learning.</p>
+          <div class="row" style="margin-top:10px">
+            <span class="tag">Spring Boot</span><span class="tag">JPA</span><span class="tag">PostgreSQL</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">CI/CD</div>
+          <h3>Pipeline as Andon Cord</h3>
+          <p>GitLab CI pipeline with build, unit tests, acceptance tests, and Docker publish.</p>
+          <div class="row" style="margin-top:10px">
+            <span class="tag">Maven</span><span class="tag">Docker</span><span class="tag">GitLab CI</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Skills ===== -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="grid cols-3" style="margin-top:10px">
+        <div class="card"><h3>Languages</h3><p>Java, SQL, JavaScript (basics)</p></div>
+        <div class="card"><h3>Back‑End</h3><p>Spring Boot, REST, JPA/Hibernate, JDBC</p></div>
+        <div class="card"><h3>Databases</h3><p>PostgreSQL, MySQL, schema design, indexes</p></div>
+        <div class="card"><h3>DevOps</h3><p>Maven, Docker, GitLab CI, testing strategy</p></div>
+        <div class="card"><h3>Architecture</h3><p>SOC, layered design, DTOs, testing pyramid</p></div>
+        <div class="card"><h3>Agile</h3><p>Backlog, stories, acceptance criteria, standups</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Experience / Timeline ===== -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline" style="margin-top:10px">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="card">
+            <h3>WeThinkCode_ — Brownfields Module</h3>
+            <p class="muted">Acceptance testing, build pipelines, sockets, Docker, Agile.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="card">
+            <h3>Personal Projects</h3>
+            <p class="muted">APIs with Spring Boot, JDBC/ORM, and CI/CD workflows.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <p class="muted">Want to collaborate or chat? Send a message:</p>
+      <form onsubmit="event.preventDefault(); alert('Thanks, your message was staged locally!');">
+        <label class="sr-only" for="name">Name</label>
+        <input id="name" name="name" placeholder="Your name" required />
+        <label class="sr-only" for="email">Email</label>
+        <input id="email" type="email" name="email" placeholder="Your email" required />
+        <label class="sr-only" for="msg">Message</label>
+        <textarea id="msg" name="message" placeholder="Your message" required></textarea>
+        <div class="row">
+          <button class="btn" type="submit">Send message</button>
+          <a class="muted" href="mailto:you@example.com">or email me directly →</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container row" style="justify-content:space-between">
+      <div>© <span id="y"></span> Ndumiso Luthuli</div>
+      <div class="row">
+        <a class="muted" href="https://github.com/ndumisoluthuli" target="_blank" rel="noreferrer noopener">GitHub</a>
+        <span class="muted">·</span>
+        <a class="muted" href="#">LinkedIn</a>
+        <span class="muted">·</span>
+        <a class="muted" href="#">Resume</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
