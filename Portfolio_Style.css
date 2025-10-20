@@ -119,8 +119,14 @@
       align-items:center;
       justify-content:space-between;
       gap:16px;
-      padding:8px 0
+      padding:8px 0;
+      flex-wrap:wrap; /* allow items to wrap so controls don't overlap */
     }
+
+    /* Layout helpers for header: keep logo left, nav centered, controls right */
+    .nav > .logo{ flex:0 0 auto; }
+    .nav > .nav-links{ flex:1 1 auto; display:flex; justify-content:center; gap:18px; }
+    .nav > .control-area{ flex:0 0 auto; }
     
     .logo{
       display:flex;
@@ -168,17 +174,31 @@
 /* Ensure GitHub button text is readable (black) */
 .nav .btn{ color:#000000 !important; }
 
-/* Theme toggle button */
+/* Control area for page-level controls (theme toggle, etc.) */
+.control-area{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-left:12px;
+}
+
+/* On narrow screens, push the control-area to its own line and align right */
+@media (max-width:640px){
+  .control-area{
+    width:100%;
+    justify-content:flex-end;
+    margin-top:8px;
+    order:3;
+  }
+}
+
+/* Theme toggle button (placed inside .control-area) */
 #theme-toggle{
-  position:fixed;
-  right:12px;
-  top:12px;
   background:var(--panel);
   color:var(--text);
   border:1px solid rgba(160,166,181,.12);
   padding:8px 10px;
   border-radius:8px;
-  z-index:110;
   cursor:pointer;
 }
 #theme-toggle:focus{outline:none;box-shadow:0 0 0 4px var(--ring)}
@@ -190,8 +210,12 @@
       display:grid;
       grid-template-columns:1.1fr .9fr;
       gap:28px;
-      padding:48px 0 24px
+      padding:48px 0 24px;
+      align-items:center; /* vertically align text with image */
     }
+
+    /* Keep hero text left-aligned on wide screens so words sit to the left of the image */
+    #hero { text-align: left; }
     
     .badge{
       display:inline-flex;
@@ -280,6 +304,9 @@
       gap:16px
     }
 
+    /* Make grid items align to the start so cards keep consistent top alignment */
+    .grid{ align-items:start; }
+
     .grid.cols-3{
       grid-template-columns:repeat(3,1fr)
     }
@@ -290,8 +317,10 @@
 
     @media (max-width:900px){
       .hero{
-        grid-template-columns:1fr
+        grid-template-columns:1fr;
       }
+      /* When stacked on smaller screens, center the hero content for better balance */
+      #hero { text-align: center; }
       .grid.cols-3{
         grid-template-columns:1fr 1fr
       }

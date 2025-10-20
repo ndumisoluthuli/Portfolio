@@ -12,7 +12,7 @@
 
 </head>
 <body>
-  <button id="theme-toggle" aria-pressed="false" aria-label="Toggle high contrast">High contrast</button>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <header>
     <div class="container nav">
       <div class="logo">Ndumiso Luthuli</div>
@@ -23,17 +23,24 @@
         <a href="#experience">Experience</a>
         <a class="btn" href="MyPortfolio.html#contact">Contact</a>
       </nav>
+      <div class="control-area" aria-hidden="false">
+        <button id="theme-toggle" aria-pressed="false" aria-label="Toggle high contrast">High contrast</button>
+      </div>
     </div>
   </header>
 
-  <main>
-    <section id="hero" class="container" style="padding:48px 0;text-align:center">
-      <h1 class="headline">Hi — I’m Ndumiso Luthuli</h1>
-      <img src="images/me.jpg" alt="Photo of Ndumiso Luthuli" class="hero-image" loading="lazy" decoding="async">
-      <p class="sub"> A Data enthusiast developer focused on Building frontends & backends, Web APIs and data solutions. Python, Java, SQL, Docker, and CI/CD are my tools. I care about maintainable code, good DX, and shipping continuously.</p>
-      <div style="margin-top:18px">
-        <a class="btn" href="MyPortfolio.html#projects">See featured projects</a>
-        <a href="MyPortfolio.html#contact" class="muted" style="margin-left:12px">Get in touch</a>
+  <main id="main">
+    <section id="hero" class="container hero" style="padding:48px 0;">
+      <div>
+        <h1 class="headline">Hi — I’m Ndumiso Luthuli</h1>
+        <p class="sub">A Data enthusiast developer focused on building frontends & backends, Web APIs and data solutions. Python, Java, SQL, Docker, and CI/CD are my tools. I care about maintainable code, good DX, and shipping continuously.</p>
+        <div style="margin-top:18px">
+          <a class="btn" href="MyPortfolio.html#projects">See featured projects</a>
+          <a href="MyPortfolio.html#contact" class="muted" style="margin-left:12px">Get in touch</a>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center">
+        <img src="images/me.jpg" alt="Photo of Ndumiso Luthuli" class="hero-image" loading="lazy" decoding="async">
       </div>
     </section>
 
@@ -42,7 +49,7 @@
       <div class="grid cols-3" style="margin-top:12px">
         <div class="card">
           <h3>Languages</h3>
-          <p>Python, Java, Python, SQL</p>
+          <p>Python, Java, SQL</p>
         </div>
         <div class="card">
           <h3>Back-End</h3>
@@ -104,5 +111,25 @@
   </footer>
 
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>
+    // Theme toggle (high contrast) - copied from MyPortfolio.html
+    (function(){
+      const btn = document.getElementById('theme-toggle');
+      const root = document.documentElement;
+      const key = 'nd-contrast';
+      function apply(val){
+        if(val==='high') root.classList.add('high-contrast'); else root.classList.remove('high-contrast');
+        btn.setAttribute('aria-pressed', val==='high');
+      }
+      const pref = localStorage.getItem(key) || 'default';
+      apply(pref);
+      btn.addEventListener('click', ()=>{
+        const now = root.classList.contains('high-contrast') ? 'default' : 'high';
+        localStorage.setItem(key, now);
+        apply(now);
+        btn.focus();
+      });
+    })();
+  </script>
 </body>
 </html>
